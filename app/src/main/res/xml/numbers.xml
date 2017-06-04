@@ -1,0 +1,53 @@
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="10%p"
+    android:horizontalGap="0px"
+    android:verticalGap="0px"
+    android:keyHeight="45dp"
+    >
+    <Row>
+        <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left"/>
+        <Key android:codes="50" android:keyLabel="2"/>
+        <Key android:codes="51" android:keyLabel="3"/>
+        <Key android:codes="52" android:keyLabel="4"/>
+        <Key android:codes="53" android:keyLabel="5"/>
+        <Key android:codes="54" android:keyLabel="6"/>
+        <Key android:codes="55" android:keyLabel="7"/>
+        <Key android:codes="56" android:keyLabel="8"/>
+        <Key android:codes="57" android:keyLabel="9"/>
+        <Key android:codes="48" android:keyLabel="0" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="185" android:keyLabel="□¹" android:keyEdgeFlags="left"/>
+        <Key android:codes="178" android:keyLabel="□²"/>
+        <Key android:codes="179" android:keyLabel="□³"/>
+        <Key android:codes="8308" android:keyLabel="□⁴"/>
+        <Key android:codes="8309" android:keyLabel="□⁵"/>
+        <Key android:codes="8310" android:keyLabel="□⁶"/>
+        <Key android:codes="8311" android:keyLabel="□⁷"/>
+        <Key android:codes="8312" android:keyLabel="□⁸"/>
+        <Key android:codes="8313" android:keyLabel="□⁹"/>
+        <Key android:codes="8304" android:keyLabel="□⁰" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="8321" android:keyLabel="□₁" android:keyEdgeFlags="left"/>
+        <Key android:codes="8322" android:keyLabel="□₂"/>
+        <Key android:codes="8323" android:keyLabel="□₃"/>
+        <Key android:codes="8324" android:keyLabel="□₄"/>
+        <Key android:codes="8325" android:keyLabel="□₅"/>
+        <Key android:codes="8326" android:keyLabel="□₆"/>
+        <Key android:codes="8327" android:keyLabel="□₇"/>
+        <Key android:codes="8328" android:keyLabel="□₈"/>
+        <Key android:codes="8329" android:keyLabel="□₉"/>
+        <Key android:codes="8320" android:keyLabel="□₀" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row>
+        <Key android:codes="-5" android:keyLabel="←" android:keyWidth="15%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
+    </Row>
+    <Row android:rowEdgeFlags="bottom">
+        <Key android:codes="-101" android:keyIcon="@drawable/lang_switch" android:keyWidth="10%p"/>
+        <Key android:codes="-102" android:keyLabel="ABC" android:keyWidth="22%p"/>
+        <Key android:codes="-103" android:keyLabel="123" android:keyWidth="22%p"/>
+        <Key android:codes="-104" android:keyLabel="Αβγ" android:keyWidth="22%p"/>
+        <Key android:codes="-105" android:keyLabel="∑()" android:keyWidth="22%p"/>
+    </Row>
+</Keyboard>

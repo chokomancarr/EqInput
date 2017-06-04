@@ -1,38 +1,63 @@
 package com.chokopan.eqinput;
 
+import android.content.Context;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputMethodManager;
 
 public class EqIME extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
 
+    static final int KEYCODE_SWITCH_LANG = -101;
+    static final int KEYCODE_KB_ABC = -102;
+    static final int KEYCODE_KB_NUM = -103;
+    static final int KEYCODE_KB_GRK = -104;
+    static final int KEYCODE_KB_SYM = -105;
+
     KeyboardView kv;
-    Keyboard keyboard;
+    int activeKbType;
+    Keyboard kb_abc;
+    Keyboard kb_num;
+    Keyboard kb_grk;
+    Keyboard kb_sym;
 
     private boolean caps = false;
 
     @Override
     public View onCreateInputView() {
         kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-        keyboard = new Keyboard(this, R.xml.greek);
-        kv.setKeyboard(keyboard);
+        kb_abc = new Keyboard(this, R.xml.qwerty);
+        kb_grk = new Keyboard(this, R.xml.greek);
+        kb_num = new Keyboard(this, R.xml.numbers);
+        kb_sym = new Keyboard(this, R.xml.symbols);
+        kv.setKeyboard(kb_abc);
         kv.setOnKeyboardActionListener(this);
+        kv.setPreviewEnabled(false);
         return kv;
     }
 
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
         InputConnection ic = getCurrentInputConnection();
+        if (primaryCode < -101 && primaryCode > -106) {
+            changeKeyboard(primaryCode);
+            return;
+        }
         switch(primaryCode){
+            case KEYCODE_SWITCH_LANG:
+                InputMethodManager in = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                in.switchToNextInputMethod(getCurrentInputBinding().getConnectionToken(), false);
+                break;
             case Keyboard.KEYCODE_DELETE :
                 ic.deleteSurroundingText(1, 0);
                 break;
             case Keyboard.KEYCODE_SHIFT:
                 caps = !caps;
-                keyboard.setShifted(caps);
+                kb_abc.setShifted(caps);
+                kb_grk.setShifted(caps);
                 kv.invalidateAllKeys();
                 break;
             case Keyboard.KEYCODE_DONE:
@@ -75,5 +100,23 @@ public class EqIME extends InputMethodService implements KeyboardView.OnKeyboard
     @Override
     public void swipeUp() {
 
+    }
+
+    void changeKeyboard (int a) {
+        activeKbType = a;
+        switch (activeKbType) {
+            case -102:
+                kv.setKeyboard(kb_abc);
+                break;
+            case -103:
+                kv.setKeyboard(kb_num);
+                break;
+            case -104:
+                kv.setKeyboard(kb_grk);
+                break;
+            case -105:
+                kv.setKeyboard(kb_sym);
+                break;
+        }
     }
 }

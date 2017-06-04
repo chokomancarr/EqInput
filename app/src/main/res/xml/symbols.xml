@@ -13,6 +13,7 @@
         <Key android:codes="950" android:keyLabel="ζ"/>
         <Key android:codes="951" android:keyLabel="η"/>
         <Key android:codes="952" android:keyLabel="θ"/>
+        <Key android:codes="-5" android:keyLabel="←" android:keyWidth="20%p" android:isRepeatable="true"/>
     </Row>
     <Row>
         <Key android:codes="953" android:keyLabel="ι" android:keyEdgeFlags="left"/>
@@ -27,21 +28,20 @@
         <Key android:codes="962" android:keyLabel="ς" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
-        <Key android:codes="-1" android:keyLabel="⇪" android:keyWidth="15%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="-1" android:keyLabel="⇪" android:keyWidth="20%p" android:keyEdgeFlags="left"/>
         <Key android:codes="963" android:keyLabel="σ" />
         <Key android:codes="964" android:keyLabel="τ"/>
         <Key android:codes="965" android:keyLabel="υ"/>
         <Key android:codes="966" android:keyLabel="φ"/>
         <Key android:codes="967" android:keyLabel="χ"/>
         <Key android:codes="968" android:keyLabel="ψ"/>
-        <Key android:codes="969" android:keyLabel="ω"/>
-        <Key android:codes="-5" android:keyLabel="←" android:keyWidth="15%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
+        <Key android:codes="969" android:keyLabel="ω" android:keyEdgeFlags="right"/>
     </Row>
     <Row android:rowEdgeFlags="bottom">
         <Key android:codes="-101" android:keyIcon="@drawable/lang_switch" android:keyWidth="10%p"/>
         <Key android:codes="-102" android:keyLabel="ABC" android:keyWidth="22%p"/>
-        <Key android:codes="-103" android:keyLabel="123" android:keyWidth="22%p"/>
-        <Key android:codes="-104" android:keyLabel="Αβγ" android:keyWidth="22%p"/>
-        <Key android:codes="-105" android:keyLabel="∑()" android:keyWidth="22%p"/>
+        <Key android:codes="-102" android:keyLabel="123" android:keyWidth="22%p"/>
+        <Key android:codes="-102" android:keyLabel="Αβγ" android:keyWidth="22%p"/>
+        <Key android:codes="-102" android:keyLabel="∑()" android:keyWidth="22%p"/>
     </Row>
 </Keyboard>
