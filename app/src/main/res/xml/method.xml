@@ -5,5 +5,5 @@
         android:label="@string/subtype_eq"
         android:imeSubtypeLocale="en_US"
         android:imeSubtypeMode="keyboard"
-        android:supportsSwitchingToNextInputMethod="true" />
+        />
 </input-method>

@@ -29,7 +29,7 @@
     </Row>
     <Row
         android:horizontalGap="0.6%p">
-        <Key android:codes="-1" android:keyLabel="⇪" android:keyWidth="20%p" android:keyEdgeFlags="left"/>
+        <Key android:codes="-1" android:keyLabel="⇪" android:keyWidth="15%p" android:keyEdgeFlags="left"/>
         <Key android:codes="963" android:keyLabel="σ" />
         <Key android:codes="964" android:keyLabel="τ"/>
         <Key android:codes="965" android:keyLabel="υ"/>

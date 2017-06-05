@@ -1,11 +1,15 @@
 package com.chokopan.eqinput;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.IBinder;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 
@@ -48,8 +52,10 @@ public class EqIME extends InputMethodService implements KeyboardView.OnKeyboard
         }
         switch(primaryCode){
             case KEYCODE_SWITCH_LANG:
-                InputMethodManager in = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                in.switchToNextInputMethod(getCurrentInputBinding().getConnectionToken(), false);
+                InputMethodManager man = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                IBinder token = getToken();
+                if (man.shouldOfferSwitchingToNextInputMethod(token))
+                    man.switchToNextInputMethod(token, false);
                 break;
             case Keyboard.KEYCODE_DELETE :
                 ic.deleteSurroundingText(1, 0);
@@ -70,6 +76,18 @@ public class EqIME extends InputMethodService implements KeyboardView.OnKeyboard
                 }
                 ic.commitText(String.valueOf(code),1);
         }
+    }
+
+    private IBinder getToken() {
+        final Dialog dialog = getWindow();
+        if (dialog == null) {
+            return null;
+        }
+        final Window window = dialog.getWindow();
+        if (window == null) {
+            return null;
+        }
+        return window.getAttributes().token;
     }
 
     @Override
