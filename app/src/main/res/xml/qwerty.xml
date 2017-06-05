@@ -28,7 +28,8 @@
         <Key android:codes="108" android:keyLabel="l"/>
         <Key android:codes="35,64" android:keyLabel="\# \@" android:keyEdgeFlags="right"/>
     </Row>
-    <Row>
+    <Row
+        android:horizontalGap="0.6%p">
         <Key android:codes="-1" android:keyLabel="⇪" android:keyWidth="15%p" android:keyEdgeFlags="left"/>
         <Key android:codes="122" android:keyLabel="z"/>
         <Key android:codes="120" android:keyLabel="x"/>

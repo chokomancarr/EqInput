@@ -1,33 +1,34 @@
 <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:my="http://schemas.android.com/apk/lib/com.chokopan.eqinput.MyKeyboard.MyKey"
     android:keyWidth="10%p"
     android:horizontalGap="0px"
     android:verticalGap="0px"
     android:keyHeight="45dp"
     >
     <Row>
-        <Key android:codes="945" android:keyLabel="α" android:keyEdgeFlags="left"/>
-        <Key android:codes="946" android:keyLabel="β"/>
-        <Key android:codes="947" android:keyLabel="γ"/>
-        <Key android:codes="948" android:keyLabel="δ"/>
-        <Key android:codes="949" android:keyLabel="ε"/>
-        <Key android:codes="950" android:keyLabel="ζ"/>
-        <Key android:codes="951" android:keyLabel="η"/>
-        <Key android:codes="952" android:keyLabel="θ"/>
-        <Key android:codes="-5" android:keyLabel="←" android:keyWidth="20%p" android:isRepeatable="true"/>
+        <Key android:codes="8730" android:keyLabel="√" android:keyEdgeFlags="left"/>
+        <Key android:codes="8731" android:keyLabel="∛"/>
+        <Key android:codes="123" android:keyLabel="{"/>
+        <Key android:codes="91" android:keyLabel="["/>
+        <Key android:codes="40" android:keyLabel="("/>
+        <Key android:codes="41" android:keyLabel=")"/>
+        <Key android:codes="93" android:keyLabel="]"/>
+        <Key android:codes="125" android:keyLabel="}" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
-        <Key android:codes="953" android:keyLabel="ι" android:keyEdgeFlags="left"/>
-        <Key android:codes="954" android:keyLabel="κ"/>
-        <Key android:codes="955" android:keyLabel="λ"/>
-        <Key android:codes="956" android:keyLabel="μ"/>
-        <Key android:codes="957" android:keyLabel="ν"/>
-        <Key android:codes="958" android:keyLabel="ξ"/>
-        <Key android:codes="959" android:keyLabel="ο"/>
-        <Key android:codes="960" android:keyLabel="π"/>
-        <Key android:codes="961" android:keyLabel="ρ"/>
-        <Key android:codes="962" android:keyLabel="ς" android:keyEdgeFlags="right"/>
+        <Key android:codes="8747" android:keyLabel="∫" my:secondaryKey="∬" my:secondaryCode="8748" android:keyEdgeFlags="left"/>
+        <Key android:codes="8750" android:keyLabel="∮"/>
+        <Key android:codes="8711" android:keyLabel="∇"/>
+        <Key android:codes="8834" android:keyLabel="⊂"/>
+        <Key android:codes="8835" android:keyLabel="⊃"/>
+        <Key android:codes="8712" android:keyLabel="∈"/>
+        <Key android:codes="8715" android:keyLabel="∋"/>
+        <Key android:codes="8707" android:keyLabel="∃"/>
+        <Key android:codes="8756" android:keyLabel="∴"/>
+        <Key android:codes="8734" android:keyLabel="∞" android:keyEdgeFlags="right"/>
     </Row>
-    <Row>
+    <Row
+        android:horizontalGap="0.6%p">
         <Key android:codes="-1" android:keyLabel="⇪" android:keyWidth="20%p" android:keyEdgeFlags="left"/>
         <Key android:codes="963" android:keyLabel="σ" />
         <Key android:codes="964" android:keyLabel="τ"/>
@@ -35,13 +36,14 @@
         <Key android:codes="966" android:keyLabel="φ"/>
         <Key android:codes="967" android:keyLabel="χ"/>
         <Key android:codes="968" android:keyLabel="ψ"/>
-        <Key android:codes="969" android:keyLabel="ω" android:keyEdgeFlags="right"/>
+        <Key android:codes="969" android:keyLabel="ω"/>
+        <Key android:codes="-5" android:keyLabel="←" android:keyWidth="15%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
     </Row>
     <Row android:rowEdgeFlags="bottom">
         <Key android:codes="-101" android:keyIcon="@drawable/lang_switch" android:keyWidth="10%p"/>
         <Key android:codes="-102" android:keyLabel="ABC" android:keyWidth="22%p"/>
-        <Key android:codes="-102" android:keyLabel="123" android:keyWidth="22%p"/>
-        <Key android:codes="-102" android:keyLabel="Αβγ" android:keyWidth="22%p"/>
-        <Key android:codes="-102" android:keyLabel="∑()" android:keyWidth="22%p"/>
+        <Key android:codes="-103" android:keyLabel="123" android:keyWidth="22%p"/>
+        <Key android:codes="-104" android:keyLabel="Αβγ" android:keyWidth="22%p"/>
+        <Key android:codes="-105" android:keyLabel="∑()" android:keyWidth="22%p"/>
     </Row>
 </Keyboard>

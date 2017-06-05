@@ -17,22 +17,22 @@ public class EqIME extends InputMethodService implements KeyboardView.OnKeyboard
     static final int KEYCODE_KB_GRK = -104;
     static final int KEYCODE_KB_SYM = -105;
 
-    KeyboardView kv;
+    MyKeyboardView kv;
     int activeKbType;
-    Keyboard kb_abc;
-    Keyboard kb_num;
-    Keyboard kb_grk;
-    Keyboard kb_sym;
+    MyKeyboard kb_abc;
+    MyKeyboard kb_num;
+    MyKeyboard kb_grk;
+    MyKeyboard kb_sym;
 
     private boolean caps = false;
 
     @Override
     public View onCreateInputView() {
-        kv = (KeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
-        kb_abc = new Keyboard(this, R.xml.qwerty);
-        kb_grk = new Keyboard(this, R.xml.greek);
-        kb_num = new Keyboard(this, R.xml.numbers);
-        kb_sym = new Keyboard(this, R.xml.symbols);
+        kv = (MyKeyboardView)getLayoutInflater().inflate(R.layout.keyboard, null);
+        kb_abc = new MyKeyboard(this, R.xml.qwerty);
+        kb_grk = new MyKeyboard(this, R.xml.greek);
+        kb_num = new MyKeyboard(this, R.xml.numbers);
+        kb_sym = new MyKeyboard(this, R.xml.symbols);
         kv.setKeyboard(kb_abc);
         kv.setOnKeyboardActionListener(this);
         kv.setPreviewEnabled(false);
